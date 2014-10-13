@@ -1,7 +1,5 @@
 package levensthein
 
-import "math"
-
 func Distance(s, t string) int {
 	if s == t {
 		return 0
@@ -28,8 +26,7 @@ func Distance(s, t string) int {
 			} else {
 				cost = 1
 			}
-			// v1[j+1] = int(math.Min(float64(v1[j]+1), math.Min(float64(v0[j+1]+1), float64(v0[j]+cost))))
-			v1[j+1] = int(math.Min(float64(v1[j]+1), math.Min(float64(v0[j+1]+1), float64(v0[j]+cost))))
+			v1[j+1] = min(v1[j]+1, v0[j+1]+1, v0[j]+cost)
 		}
 		for j := range v0 {
 			v0[j] = v1[j]
@@ -39,8 +36,14 @@ func Distance(s, t string) int {
 }
 
 func min(ints ...int) int {
-	var min int
-	for _, v := range ints {
-
+	if len(ints) == 0 {
+		panic("Cannot compute minimum of no elements")
 	}
+	min := ints[0]
+	for _, v := range ints {
+		if v < min {
+			min = v
+		}
+	}
+	return min
 }
