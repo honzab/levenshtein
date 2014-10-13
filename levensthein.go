@@ -1,5 +1,12 @@
 package levensthein
 
+// This methods counts the Levensthein distance https://en.wikipedia.org/wiki/Levenshtein_distance
+// of two strings. It allows only for single character edits (insertion,
+// deletion and substitution).
+//
+// The implementation is using the two matrix row method described on
+// http://www.codeproject.com/Articles/13525/Fast-memory-efficient-Levenshtein-algorithm
+// and on the Wikipedia (see the link above).
 func Distance(s, t string) int {
 	if s == t {
 		return 0
@@ -35,6 +42,8 @@ func Distance(s, t string) int {
 	return int(v1[len_t])
 }
 
+// Helper variadic min function that takes a variable amount of integers and
+// returns the minimal value. Panics if no values are supplied.
 func min(ints ...int) int {
 	if len(ints) == 0 {
 		panic("Cannot compute minimum of no elements")
