@@ -1,6 +1,6 @@
-package levensthein
+package levenshtein
 
-// This methods counts the Levensthein distance https://en.wikipedia.org/wiki/Levenshtein_distance
+// This methods counts the Levenshtein distance https://en.wikipedia.org/wiki/Levenshtein_distance
 // of two strings. It allows only for single character edits (insertion,
 // deletion and substitution).
 //
