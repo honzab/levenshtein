@@ -40,16 +40,16 @@ func TestDistanceEmptyString(t *testing.T) {
 
 func TestMinimum(t *testing.T) {
 	if m := min(1, 2, 3); m != 1 {
-		t.Fatalf("Expected minimum %s, not %s", m, 1)
+		t.Fatalf("Expected minimum %d, not %d", m, 1)
 	}
 	if m := min(3, 2, 1); m != 1 {
-		t.Fatalf("Expected minimum %s, not %s", m, 1)
+		t.Fatalf("Expected minimum %d, not %d", m, 1)
 	}
 	if m := min(-3, 2, 1); m != -3 {
-		t.Fatalf("Expected minimum %s, not %s", m, -3)
+		t.Fatalf("Expected minimum %d, not %d", m, -3)
 	}
 	if m := min(1); m != 1 {
-		t.Fatalf("Expected minimum %s, not %s", m, 1)
+		t.Fatalf("Expected minimum %d, not %d", m, 1)
 	}
 }
 
